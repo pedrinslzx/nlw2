@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "site": "proffy",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "/src",
+      "/public"
+    ]
+  }
+}
