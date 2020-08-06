@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   color: var(--color-text-in-primary);
-  background: var(--color-primary)
+  background: var(--color-primary);
 }
 
 .logo-container img {
@@ -82,7 +82,7 @@
   margin-left: 0.8rem;
 }
 
-@media(min-width:1100px) {
+@media (min-width: 1200px) {
   #page-landing-content {
     max-width: 1100px;
     display: grid;
@@ -93,7 +93,7 @@
   .logo-container {
     grid-area: logo;
     align-self: center;
-    margin: 0
+    margin: 0;
   }
   .hero-image {
     grid-area: hero;
