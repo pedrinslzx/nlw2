@@ -1,24 +1,23 @@
-<h1 align = "center"> Welcome to Proffy Web 👋 </h1>
+<h1 align="center">Welcome to Backend Proffy 👋</h1>
 <p>
-   <img alt = "Version" src = "https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://www.npmjs.com/package/backend" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/backend.svg">
+  </a>
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
 </p>
 
 > Proffy is an online study platform, aiming to connect students and teachers with the aim of taking classes online.
 
-### ✨ [Demo](proffy.web.app)
+### 🏠 [Homepage](proffy.web.app)
 
 ```sh
 ## Install
 yarn install
 
-## Develop
+## Usage
 yarn start
-
-## Create Build
-yarn build
-
-## Deploying to Firebase
-yarn deploy
 ```
 
 ## Author
