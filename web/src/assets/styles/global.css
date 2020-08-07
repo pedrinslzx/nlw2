@@ -26,11 +26,10 @@
   box-sizing: border-box;
 }
 
-html,
-body,
-#root {
+html, body, #root {
   height: 100vh;
   background-color: var(--color-background);
+  overflow-x: hidden;
 }
 
 #root {
@@ -39,10 +38,7 @@ body,
   justify-content: center;
 }
 
-body,
-input,
-button,
-textarea {
+body, input, button, textarea {
   font: 500 1.6rem Poppins;
   color: var(--color-text-base);
 }
@@ -50,6 +46,14 @@ textarea {
 .container {
   width: 90vw;
   max-width: 700px;
+}
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-text-base);
 }
 
 @media (min-width: 700px) {
