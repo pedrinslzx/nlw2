@@ -1,12 +1,14 @@
 import express from 'express'
+import helmet from 'helmet'
+import cors from 'cors'
+import routes from './routes'
 
 const app = express()
 
-app.get('/users', (request, response) => {
-  const users = [
-    { name: 'Pedrinho Lemes', github: '@pedrinholemes' }
-  ]
-  return response.json(users)
-})
+app.disable('x-powered-by');
+app.use(cors())
+app.use(helmet())
+app.use(express.json())
+app.use(routes)
 
 app.listen(3333, () => console.log('App started'))
