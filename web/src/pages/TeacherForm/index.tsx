@@ -1,8 +1,10 @@
 import React from 'react';
 import PageHeader from '../../components/PageHeader';
+import Input from '../../components/Input';
+import warningIcon from '../../assets/images/icons/warning.svg';
 
 import './styles.css'
-import Input from '../../components/Input';
+
 const TeacherForm: React.FC = () => {
   return (
     <div>
@@ -23,6 +25,16 @@ const TeacherForm: React.FC = () => {
             <Input label="Matéria" name="subject" />
             <Input label="Custo da sua hora/aula" name="cost" />
           </fieldset>
+          <footer>
+            <p>
+              <img src={warningIcon} alt="Aviso Importante" />
+              Importante! <br />
+              Preencha todos os dados
+            </p>
+            <button type="button">
+              Salvar Cadastro
+            </button>
+          </footer>
         </main>
       </div>
     </div>
