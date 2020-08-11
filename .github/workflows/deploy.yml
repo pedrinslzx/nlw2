@@ -1,0 +1,21 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      env:
+        HEROKU_DEPLOY: ${{ secrets.HEROKU_DEPLOY }}
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.3.6 # This is the action
+        with:
+          heroku_api_key: "$SUPER_SECRET"
+          heroku_app_name: "proffy-0" #Must be unique in Heroku
+          heroku_email: "pedroca21265@gmail.com"
+          appdir: "backend"
