@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "start": "knex:migrate && ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "start": "npm run knex:migrate && ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "knex:migrate": "knex --knexfile knexfile.ts migrate:latest"
   },
   "dependencies": {
