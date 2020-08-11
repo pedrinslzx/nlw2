@@ -8,9 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
-      env:
+      - env:
         HEROKU_DEPLOY: ${{ secrets.HEROKU_DEPLOY }}
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.3.6 # This is the action
