@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import logoImg from '../../assets/images/logo.svg';
 import landingImg from '../../assets/images/landing.svg';
@@ -12,6 +12,7 @@ import './styles.css';
 import api from '../../services/api';
 
 function Landing() {
+  const history = useHistory()
   const [totalConnections, setTotalConnections] = useState(0)
   useEffect(() => {
     api.get('connections').then(response => {
@@ -44,7 +45,7 @@ function Landing() {
           </Link>
 
         </div>
-        <span className="total-connections">
+        <span onClick={() => history.push('/ranking')} className="total-connections">
           Total de {totalConnections} conexões já realizadas
             <img
             src={purpleHeartIcon}
