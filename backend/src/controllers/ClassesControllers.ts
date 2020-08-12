@@ -1,21 +1,28 @@
 import { Request, Response } from "express";
 import db from "../database/connection";
 import convertHourToMinutes from "../utils/convertHourToMinutes";
-
-
-interface ScheduleItem {
-  week_day: number,
-  from: string,
-  to: string
-}
+import { ScheduleItem } from "../types";
 
 export default class Classes {
   async index(req: Request, res: Response) {
     const filters = req.query;
-    if (!filters.week_day || !filters.subject || !filters.time)
+    if (!filters.week_day && !filters.subject && !filters.time) {
+      return res.json(
+        await db('classes')
+          .join('users', 'classes.user_id', '=', 'users.id')
+          .select([
+            'classes.id',
+            'classes.subject',
+            'classes.cost',
+            'users.*'
+          ])
+      )
+    }
+    if (!filters.week_day || !filters.subject || !filters.time) {
       return res.status(400).json({
         error: 'Missing filters o search classes'
       })
+    }
 
     const time = filters.time as string
     const subject = filters.subject as string

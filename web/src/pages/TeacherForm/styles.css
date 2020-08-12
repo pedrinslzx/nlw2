@@ -22,11 +22,11 @@
   padding: 0 2.4rem;
 }
 
-#page-teacher-form main fieldset + fieldset {
+#page-teacher-form main fieldset+fieldset {
   margin-top: 6.4rem;
 }
-#page-teacher-form main fieldset .input-block + .textarea-block,
-#page-teacher-form main fieldset .select-block + .input-block {
+
+#page-teacher-form main fieldset .input-block+.textarea-block, #page-teacher-form main fieldset .select-block+.input-block {
   margin-top: 2.4rem;
 }
 
@@ -45,6 +45,7 @@
   padding-bottom: 1.6rem;
   border-bottom: 1px solid var(--color-line-in-white);
 }
+
 #page-teacher-form main fieldset legend button {
   background: none;
   border: 0;
@@ -54,6 +55,7 @@
   outline: 0;
   transition: color 0.2s ease-in-out;
 }
+
 #page-teacher-form main fieldset legend button:hover {
   color: var(--color-primary-dark);
 }
@@ -77,6 +79,7 @@
 #page-teacher-form main footer p img {
   margin-right: 2rem;
 }
+
 #page-teacher-form main footer button {
   width: 100%;
   height: 5.6rem;
@@ -96,6 +99,30 @@
 
 #page-teacher-form main footer button:hover {
   background-color: var(--color-secundary-dark);
+}
+
+#page-teacher-form main .schedule-item {
+  position: relative;
+}
+
+#page-teacher-form main .schedule-item span.remove {
+  cursor: pointer;
+  margin: 1.6rem 0 1.2rem 0;
+  background-color: white;
+  color: var(--color-primary-dark);
+  padding: 1.8rem 3.2rem;
+  border-radius: 0.8rem;
+  border: 1px solid var(--color-primary-lighter);
+  width: 100%;
+  height: 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .2s ease-in-out;
+}
+
+#page-teacher-form main .schedule-item span.remove:hover {
+  background-color: var(--color-input-background);
 }
 
 @media (min-width: 700px) {
@@ -124,9 +151,29 @@
   #page-teacher-form main .schedule-item {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     column-gap: 1.6rem;
+    row-gap: 1.1rem;
+    grid-template-areas: "week_day from to" "remove-button remove-button remove-button";
   }
   #page-teacher-form main .schedule-item .input-block {
     margin-top: 0 !important;
+  }
+  #page-teacher-form main .schedule-item#no-remove {
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "week_day from to";
+  }
+  #page-teacher-form main .schedule-item span.remove {
+    grid-area: remove-button;
+  }
+  #page-teacher-form main .schedule-item div.select-block {
+    grid-area: week_day;
+  }
+  #page-teacher-form main .schedule-item .input-block:first-child {
+    grid-area: from;
+  }
+  #page-teacher-form main .schedule-item .input-block+.input-block {
+    grid-area: to;
   }
 }
