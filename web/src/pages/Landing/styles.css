@@ -10,10 +10,11 @@
 
 .logo-container img {
   height: 10rem;
+  justify-content: center;
 }
 
 .hero-image {
-  width: 100%;
+  width: 90%;
 }
 
 .logo-container {
@@ -36,7 +37,7 @@
 
 .buttons-container a {
   width: 30rem;
-  height: 10.4rem;
+  height: 9.5rem;
   border-radius: 0.8rem;
   font: 700 2rem Archivo;
   display: flex;
@@ -70,17 +71,16 @@
 .buttons-container a.give-classes:hover {
   background-color: var(--color-secundary-dark);
 }
-
 .buttons-container a img {
-  margin-right: 2.4rem;
+  display:none;
 }
-
 .total-connections {
   font-size: 1.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  margin-top: -0.5rem;
 }
 
 .total-connections img {
@@ -122,5 +122,10 @@
   }
   .buttons-container a {
     font-size: 2.4rem;
+    height: 10.4rem;
+  }
+  .buttons-container a img{
+    display: initial;
+    margin-right: 2.4rem;
   }
 }
