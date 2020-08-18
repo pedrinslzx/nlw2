@@ -5,9 +5,8 @@
 
 > Proffy is an online study platform, aiming to connect students and teachers with the aim of taking classes online.
 
-### 🏠 [Homepage](proffy.web.app)
-
-### ✨ [Demo](proffy.web.app)
+### ✨ [Demo API](https://proffy-0.herokuapp.com)
+### ✨ [Demo WEB](https://proffy.web.app)
 
 ## Backend
 
